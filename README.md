@@ -1,4 +1,4 @@
-# v-chatroom
+# vue3-chatroom
 
 ## Project setup
 ```
