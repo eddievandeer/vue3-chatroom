@@ -20,6 +20,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "axios": "^0.21.0",
+    "font-awesome": "^4.7.0",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "sass": "^1.29.0",
