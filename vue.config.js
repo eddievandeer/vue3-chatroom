@@ -10,6 +10,14 @@ module.exports = {
                 pathRewrite: {
                     '^/api': ''
                 }
+            },
+            '/emoji': {
+                target: 'https://i0.hdslb.com/bfs/emote',
+                // 允许跨域
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/emoji': ''
+                }
             }
         }
     }
