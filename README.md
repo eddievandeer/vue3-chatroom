@@ -1,19 +1,22 @@
 # vue3-chatroom
+一个使用 vue3 + express + socket.io 开发的网页版在线聊天应用，支持好友功能、表情功能及视频聊天功能
 
-## Project setup
+## 安装依赖
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 启动后端服务
 ```
-npm run serve
+npm run server
 ```
 
-### Compiles and minifies for production
+### 启动前端服务
+```
+npm run dev
+```
+
+### 打包项目
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
