@@ -7,6 +7,17 @@ npm install
 ```
 
 ### 启动后端服务
+先创建一个数据库，并使用根目录下的 `db.sql` 文件创建项目所需的表，然后将数据库的相关配置写在根目录下的 `mysql/index.js` 下，配置选项参考如下内容：
+
+```js
+module.exports = {
+    host: 'localhost',  // 主机地址
+    user: 'xxx',        // 用户名
+    password: 'xxx',    // 密码
+    database: 'test'    // 数据库名
+}
+```
+
 ```
 npm run server
 ```
