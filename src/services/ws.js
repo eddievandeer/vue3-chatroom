@@ -13,7 +13,7 @@ class Socket {
 
     initSocket() {
         if (Socket.socket == undefined || Socket.socket == null) {
-            Socket.socket = io('http://10.6.201.6:3000/', {
+            Socket.socket = io('http://192.168.1.10:3000/', {
                 withCredentials: true,
             })
 

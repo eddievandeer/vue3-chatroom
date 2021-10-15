@@ -7,7 +7,7 @@ const socketPool = new Map(),
 function startSocket(server) {
     const io = require("socket.io")(server, {
         cors: {
-            origin: "http://10.6.201.6:8080",
+            origin: "http://192.168.1.10:8080",
             methods: ["GET", "POST"],
             allowedHeaders: ["my-custom-header"],
             credentials: true
