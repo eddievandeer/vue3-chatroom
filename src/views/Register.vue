@@ -26,6 +26,8 @@
         useRouter
     } from 'vue-router'
 
+    import md5 from 'js-md5'
+
     export default {
         name: 'Register',
         setup() {
@@ -58,7 +60,9 @@
                             router.push('/')
                         })
                         .catch((error) => {
-                            console.log(error.response);
+                            alert(error.response.data.error)
+                            userParams.password = ''
+                            userParams.confirm = ''
                         })
                     }
                 } else {

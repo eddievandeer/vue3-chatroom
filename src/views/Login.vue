@@ -51,6 +51,7 @@
                         .catch((error) => {
                             console.log(error.response);
                             alert(error.response.data.error)
+                            userParams.password = ''
                         })
                 } else {
                     alert('用户名或密码不能为空！')

@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import { login, setToken, getFriends, userAvatar } from '../services'
+import { login, setToken, getFriends, userAvatar, register } from '../services'
 import { copy } from '../utils/util'
 
 export default createStore({
