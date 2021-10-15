@@ -45,7 +45,10 @@ function startSocket(server) {
 
             // 未接收的好友请求
             if (buddyQueue.has(uid)) {
-                io.to(`${socket.id}`).emit('check buddy', buddyQueue.get(uid))
+                io.to(`${socket.id}`).emit('check buddy', {
+                    from: buddyQueue.get(uid),
+                    to: uid
+                })
             }
         })
 
@@ -86,7 +89,7 @@ function startSocket(server) {
 
         // 接收用户校验结果，同意好友请求存入数据库，不同意忽略
         socket.on('check buddy', (data) => {
-            buddyQueue.delete(data.from)
+            buddyQueue.delete(data.to)
 
             if (data.check == true) {
                 const fromId = socketPool.get(data.from)
