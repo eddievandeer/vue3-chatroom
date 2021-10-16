@@ -1,4 +1,5 @@
 import { io } from 'socket.io-client'
+import wsConfig from '../../config/ws'
 
 class Socket {
     constructor(uid) {
@@ -13,7 +14,7 @@ class Socket {
 
     initSocket() {
         if (Socket.socket == undefined || Socket.socket == null) {
-            Socket.socket = io('http://192.168.1.10:3000/', {
+            Socket.socket = io(wsConfig.target, {
                 withCredentials: true,
             })
 

@@ -1,4 +1,5 @@
 const { addMessage, addBuddy } = require('../db');
+const wsConfig = require('../../config/ws');
 
 const socketPool = new Map(),
     messageQueue = new Map(),
@@ -7,7 +8,7 @@ const socketPool = new Map(),
 function startSocket(server) {
     const io = require("socket.io")(server, {
         cors: {
-            origin: "http://192.168.1.10:8080",
+            origin: wsConfig.origin,
             methods: ["GET", "POST"],
             allowedHeaders: ["my-custom-header"],
             credentials: true
