@@ -9,7 +9,10 @@ function query(sql, sqlParams) {
 
         connection.query(sql, sqlParams, function (err, result) {
             if (err) {
-                reject('[SELECT ERROR] - ' + err.message);
+                reject({
+                    message: '[MYSQL ERROR] - ' + err,
+                    detail: err
+                });
                 return;
             }
             if (result && typeof result == 'object') {

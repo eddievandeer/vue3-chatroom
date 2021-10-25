@@ -3,6 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const { login, register, friendList, userAvatar, profile, searchUser } = require('../db');
 const { verifyToken } = require('../utils/verify')
+const { mysqlErr } = require('../utils/err')
 
 router.post('/login', (req, res) => {
     const username = req.body.username;
@@ -27,8 +28,8 @@ router.post('/login', (req, res) => {
                 token
             });
         }
-    }).catch(() => {
-        res.status(400).json({ error: 'Username or password is wrong!' });
+    }).catch((err) => {
+        mysqlErr(err, res)
     });
 })
 
@@ -62,8 +63,8 @@ router.post('/register', (req, res) => {
         }).catch(() => {
             res.status(400).json({ error: 'Username or password is wrong!' });
         });
-    }).catch(() => {
-        res.status(400).json({ error: '用户名已被注册!' });
+    }).catch((err) => {
+        mysqlErr(err, res)
     });
 })
 
