@@ -16,6 +16,7 @@ npm install
 ~~~js
 module.exports = {
     host: 'localhost',  // 主机地址
+    port: '3306',		// 该项非必选，可不进行配置，默认为3306
     user: 'xxx',        // 用户名
     password: 'xxx',    // 密码
     database: 'test'    // 数据库名
